@@ -1,4 +1,4 @@
-## 欢迎来到xac.ac.cn
+# welcome to xac.ac.cn
 # [CDMA网盘](https://www.cdma.im)
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
