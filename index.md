@@ -1,6 +1,5 @@
 ## 欢迎来到xac.ac.cn
-
-You can use the [editor on GitHub](https://github.com/GTX10010/GTX10010.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+# CDMA网盘：https://www.cdma.im
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
