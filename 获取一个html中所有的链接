@@ -1,0 +1,9 @@
+# gtx10010.github.io
+
+from bs4 import BeautifulSoup
+import requests
+r = requests.get("https://www.qq.com")
+html = r.text
+soup = BeautifulSoup(html, "html.parser")
+for link in soup.find_all('a'):
+    print(link.get('href'))   #找到a标签的属性并把这个并把这个属性的内容获取出来
