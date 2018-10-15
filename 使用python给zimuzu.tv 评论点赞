@@ -1,0 +1,15 @@
+# gtx10010.github.io
+import requests
+import random
+url ='http://www.zimuzu.tv/comment/good?id=388155&thread=1' #评论URL 通过f12人工点赞一次获取
+proxie = [       # 用个代理ip把，虽然点赞也不干啥，但是小心被server封了mac   西刺代理IP
+    '118.190.95.35:9001',
+    '61.135.217.7:80',
+    '222.221.11.119:3128',
+]
+head = {     #构造个 headers为了安全
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+for i in range(2000):
+    r = requests.get(url,proxies={'http': random.choice(proxie)}, headers=head,timeout=3)
+    print(r.status_code)  #看看状态OK不   ----200
+    print(r.text)     看看效果   {"status":1,"info":null,"data":388155}   表示OK
