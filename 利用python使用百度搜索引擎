@@ -1,0 +1,13 @@
+# gtx10010.github.io
+#百度搜索
+# import requests
+# keyword = 'python'
+# try:
+
+#     kkk = {'wd':keyword}
+#     r = requests.get("http://www.baidu.com/s", params=kkk)
+#     print(r.request.url)
+#     r.raise_for_status()
+#     print(r.text[:10000])
+# except:
+#     print("查询失败")
