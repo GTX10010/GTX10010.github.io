@@ -1,0 +1,12 @@
+# gtx10010.github.io
+#利用ipip.net免费接口查询IP地址
+import requests
+url = "http://freeapi.ipip.net/"
+try:
+    ip = input("请输入IP地址")
+    r = requests.get(url + ip)
+    r.raise_for_status()
+    r.encoding = r.apparent_encoding
+    print(r.text)
+except:
+    print("爬取失败")
