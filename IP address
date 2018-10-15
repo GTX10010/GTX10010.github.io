@@ -9,4 +9,4 @@ try:
     r.encoding = r.apparent_encoding
     print(r.text)
 except:
-    print("爬取失败")
+    print("查询失败")
