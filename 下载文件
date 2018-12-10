@@ -1,14 +1,17 @@
 import requests
 import time
+from time import sleep
 url = input("请输入链接HTTP/HTTPS:")
 dwfe = input("请输入下载文件名:")
-print("正在下载文件。。。")
+print("文件正在下载中")
 start = time.time()
 r = requests.get(url)
 with open(dwfe, "wb") as f:
     f.write(r.content)
 end = time.time()
-print("下载时间为%.2f秒"%(end-start))
+print("下载完成时间为%.2f秒"%(end-start))
+sleep(15)
 #配合Django在线页面提交应该不错 就不用每次SSH了
+#没有错误判断机制
 #还缺个进度条
 #缺个多线程
