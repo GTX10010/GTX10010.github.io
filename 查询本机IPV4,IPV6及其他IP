@@ -1,0 +1,34 @@
+import requests
+from time import sleep
+
+url = "http://freeapi.ipip.net/"
+urls = "http://members.3322.org/dyndns/getip"   #查本机IPV4
+urlss= "https://api-ipv6.ip.sb/ip"       #查本机ipv6 https://api-ipv4.ip.sb/ip可以查本机IPV4
+
+try:
+    ss = requests.get(urlss)
+    ss.raise_for_status()
+    ss.encoding = ss.apparent_encoding
+    print("您的IPV6地址为："+ ss.text)
+except :
+    print("IPV6查询失败")
+
+try:
+     f = requests.get(urls)
+     f.raise_for_status()
+     f.encoding = f.apparent_encoding
+     print("您的IPV4地址为：" + f.text)
+except:
+    print("IPV4查询失败")
+
+
+try:
+     ip = input("请输入IP地址")
+     r = requests.get(url + ip)
+     r.raise_for_status()
+     r.encoding = r.apparent_encoding
+     print(r.text)
+except:
+     print("该" + ip + "IP查询失败")
+print("15s后退出程序")
+sleep(15)
