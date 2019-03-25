@@ -1,0 +1,31 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+import requests
+urlv4 = "http://members.3322.org/dyndns/getip" 
+urlv6= "https://api-ipv6.ip.sb/ip" 
+
+# Create your views here.
+def index(request):
+    ss = ""
+    try:
+     f = requests.get(urlv4)
+     f.raise_for_status()
+     f.encoding = f.apparent_encoding
+     ss = "本机IPV4为："+ f.text
+    #  return HttpResponse("本机IPV4为："+ f.text)
+    except:
+    #    return HttpResponse("IPV4查询失败")
+        ss = "IPV4查询失败"
+
+    #return HttpResponse("hello world...")
+    try:
+     r = requests.get(urlv6)
+     r.raise_for_status()
+     r.encoding = r.apparent_encoding
+     ss += "/" + "本机IPV6为："+ r.text
+    #  return HttpResponse("本机IPV6为："+ r.text)
+    except:
+        # return HttpResponse("IPV6查询失败")
+        ss += "/" + "IPV6查询失败"
+
+        return HttpResponse(ss)
